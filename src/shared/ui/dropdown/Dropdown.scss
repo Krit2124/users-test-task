@@ -1,0 +1,66 @@
+@import '../../styles/typography';
+@import '../../styles/variables';
+
+.dropdown {
+  position: relative;
+
+  &-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 4px 10px;
+    line-height: 1;
+    color: $color-primary01;
+
+    &:hover {
+      color: $color-accent;
+    }
+
+    &:active {
+      color: $color-primary02;
+    }
+  }
+
+  &-menu {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: $color-primary06;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    z-index: 1;
+    width: 200px;
+    padding: 8px;
+
+    &.show {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }
+
+  &-item {
+    @include typography-desktop-text2-medium;
+    padding: 8px 12px;
+    text-align: left;
+    color: $color-primary01;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    &-item {
+      @include typography-mobile-text2-medium;
+    }
+
+    &-menu {
+      width: 160px;
+    }
+  }
+}

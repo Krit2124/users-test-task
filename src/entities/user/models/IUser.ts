@@ -6,5 +6,4 @@ export interface IUser {
     city: string;
     phone: string;
     company: string;
-    
 }

@@ -1,0 +1,71 @@
+@import '../../shared/styles/variables.scss';
+@import '../../shared/styles/typography.scss';
+
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &-logo {
+        height: 24px;
+    }
+
+    &-icons {
+        display: flex;
+        gap: 4px;
+    }
+
+    &-icon-button {
+        height: 24px;
+        width: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+  
+    &-actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &-user {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+  
+        &-avatar {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+  
+        &-name {
+            @include typography-desktop-text2-medium;
+            margin-left: 8px;
+            color: $color-primary02;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        &-icons {
+            display: none;
+        }
+
+        &-user {
+            &-name {
+                display: none;
+            }
+        }
+    }
+}

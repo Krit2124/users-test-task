@@ -1,0 +1,23 @@
+@import '../../styles/typography';
+@import '../../styles/variables';
+
+.button-default {
+    @include typography-desktop-text2-semibold;
+    cursor: pointer;
+    border: 0;
+    border-radius: 50px;
+    padding: 12px 42px;
+    background-color: $color-primary01;
+    color: $color-primary06;
+
+    &:hover {
+        background-color: $color-primary05;
+        color: $color-primary02;
+    }
+}
+
+@media (max-width: 768px) {
+    .button-default {
+        @include typography-mobile-text2-semibold;
+    }
+}

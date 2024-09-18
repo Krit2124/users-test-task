@@ -1,0 +1,59 @@
+@import './variables';
+
+@mixin typography-desktop-title {
+    font-size: $font-size-huge;
+    font-weight: $font-weight-semibold;
+}
+@mixin typography-desktop-headline {
+    font-size: $font-size-large;
+    font-weight: $font-weight-semibold;
+}
+@mixin typography-desktop-text1-semibold {
+    font-size: $font-size-big;
+    font-weight: $font-weight-semibold;
+}
+@mixin typography-desktop-text1-medium {
+    font-size: $font-size-big;
+    font-weight: $font-weight-medium;
+}
+@mixin typography-desktop-text2-semibold {
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+}
+@mixin typography-desktop-text2-medium {
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+}
+@mixin typography-desktop-caption {
+    font-size: $font-size-small;
+    font-weight: $font-weight-regular;
+}
+
+@mixin typography-mobile-title {
+    font-size: $font-size-huge;
+    font-weight: $font-weight-semibold;
+}
+@mixin typography-mobile-headline {
+    font-size: $font-size-big;
+    font-weight: $font-weight-semibold;
+}
+@mixin typography-mobile-text1-semibold {
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+}
+@mixin typography-mobile-text1-medium {
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+}
+@mixin typography-mobile-text2-semibold {
+    font-size: $font-size-small;
+    font-weight: $font-weight-semibold;
+}
+@mixin typography-mobile-text2-medium {
+    font-size: $font-size-small;
+    font-weight: $font-weight-medium;
+}
+@mixin typography-mobile-caption {
+    font-size: $font-size-little;
+    font-weight: $font-weight-regular;
+}

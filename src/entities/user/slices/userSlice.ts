@@ -19,7 +19,16 @@ export const fetchUsers = createAsyncThunk(
     async (_, thunkAPI) => {
         try {
             const response = await baseAPI.get('/users');
-            return response.data;
+            const users = response.data.map((user: any) => ({
+                id: user.id,
+                name: user.name,
+                username: user.username,
+                email: user.email,
+                city: user.address.city,
+                phone: user.phone,
+                company: user.company.name,
+            }));
+            return users;
         } catch (error) {
             return thunkAPI.rejectWithValue("Не удалось загрузить пользователей")
         }
