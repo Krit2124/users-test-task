@@ -66,3 +66,51 @@
         }
     }
 }
+
+@media (max-width: 815px) {
+    .goBack {
+        padding: 8px 0;
+        margin-bottom: 20px;
+    
+        &-button {
+            &-text {
+                @include typography-desktop-text2-semibold;
+            }
+        }
+    }
+    
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    
+        .category-panel {
+            gap: 24px;
+            padding: 28px;
+    
+            &-image {
+                width: 287px;
+                max-width: 90vw;
+                max-height: 187px;
+                object-fit: cover;
+            }
+    
+            &-list {
+                gap: 20px;
+            }
+        }
+    
+        .userData {
+            gap: 24px;
+            padding: 28px;
+    
+            &-content {
+                gap: 20px;
+    
+                &-title {
+                    @include typography-mobile-title;
+                }
+            }
+        }
+    }
+}

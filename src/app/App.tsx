@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { UsersPage } from '../pages/users/index';
+import { Outlet } from 'react-router-dom';
+
 import { useAppDispatch } from '../shared/hooks/redux';
 import { fetchUsers } from '../entities/user/slices/userSlice';
 import Header from '../widgets/header';
-import EditUserPage from '../pages/edit-user';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <Header />
 
-      <EditUserPage />
+      <Outlet />
     </div>
   );
 }

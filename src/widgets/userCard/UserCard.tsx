@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
 import { DropdownActive } from '../../shared/ui/dropdown';
+import { useNavigate } from 'react-router-dom';
 
 import './UserCard.scss';
-import { useAppDispatch } from '../../shared/hooks/redux';
-import { hideUser, moveToArchive } from '../../entities/user/slices/userSlice';
+import { useAppDispatch, useAppSelector } from '../../shared/hooks/redux';
+import { hideUser, moveToArchive, setChosenUser } from '../../entities/user/slices/userSlice';
 
 interface UserCardProps {
     id: number;
@@ -15,6 +16,13 @@ interface UserCardProps {
 
 const UserCard: FC<UserCardProps> = ({ id, username, city, company, img }) => {
     const dispatch = useAppDispatch();
+    const { chosenUser } = useAppSelector(state => state.userReducer);
+    const navigate = useNavigate();
+
+    const handleUserEdit = () => {
+        dispatch(setChosenUser(id))
+        navigate('/user/edit/' + id);
+    }
 
     return (
         <div className="userCard">
@@ -27,7 +35,7 @@ const UserCard: FC<UserCardProps> = ({ id, username, city, company, img }) => {
                     </div>
                     
                     <div className="userCard-menu">
-                        <DropdownActive actionToArchive={() => {dispatch(moveToArchive(id))}} actionToEdit={() => {}} actionToHide={() => {dispatch(hideUser(id))}}/>
+                        <DropdownActive actionToArchive={() => {dispatch(moveToArchive(id))}} actionToEdit={handleUserEdit} actionToHide={() => {dispatch(hideUser(id))}}/>
                     </div>
                 </div>
 

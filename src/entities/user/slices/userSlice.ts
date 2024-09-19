@@ -73,6 +73,26 @@ export const userSlice = createSlice({
                 state.usersArchive.push(user);
             }
         },
+
+        // Запоминание выбранного пользователя
+        setChosenUser: (state, action: PayloadAction<number>) => {
+            const userId = action.payload;
+            const user = state.usersActive.find(user => user.id === userId);
+            if (user) {
+                state.chosenUser = user;
+            }
+        },
+
+        // Сохранение изменённых данных пользователя
+        saveUser: (state, action: PayloadAction<IUser>) => {
+            const updatedUser = action.payload;
+
+            const userIndex = state.users.findIndex(user => user.id === updatedUser.id);
+            state.users[userIndex] = updatedUser;
+
+            const activeUserIndex = state.usersActive.findIndex(user => user.id === updatedUser.id);
+            state.usersActive[activeUserIndex] = updatedUser;
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -98,6 +118,6 @@ export const userSlice = createSlice({
     }
 });
 
-export const { hideUser, moveToActive, moveToArchive } = userSlice.actions;
+export const { hideUser, moveToActive, moveToArchive, setChosenUser, saveUser } = userSlice.actions;
 
 export default userSlice.reducer;

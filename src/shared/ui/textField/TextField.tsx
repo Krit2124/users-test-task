@@ -4,7 +4,7 @@ import './TextField.scss';
 
 interface TextFieldProps {
     fieldName: string;
-    value: string;
+    value: string | undefined;
     setValue: (value: string) => void;
 }
 
