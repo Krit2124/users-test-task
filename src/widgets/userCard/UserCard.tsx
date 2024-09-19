@@ -2,6 +2,8 @@ import React, { FC } from 'react';
 import { DropdownActive } from '../../shared/ui/dropdown';
 
 import './UserCard.scss';
+import { useAppDispatch } from '../../shared/hooks/redux';
+import { hideUser, moveToArchive } from '../../entities/user/slices/userSlice';
 
 interface UserCardProps {
     id: number;
@@ -12,6 +14,8 @@ interface UserCardProps {
 }
 
 const UserCard: FC<UserCardProps> = ({ id, username, city, company, img }) => {
+    const dispatch = useAppDispatch();
+
     return (
         <div className="userCard">
             <img src={img} alt="Avatar" className="userCard-avatar" />
@@ -23,7 +27,7 @@ const UserCard: FC<UserCardProps> = ({ id, username, city, company, img }) => {
                     </div>
                     
                     <div className="userCard-menu">
-                        <DropdownActive actionToArchive={() => {}} actionToEdit={() => {}} actionToHide={() => {}}/>
+                        <DropdownActive actionToArchive={() => {dispatch(moveToArchive(id))}} actionToEdit={() => {}} actionToHide={() => {dispatch(hideUser(id))}}/>
                     </div>
                 </div>
 

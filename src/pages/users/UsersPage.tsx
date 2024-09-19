@@ -10,21 +10,21 @@ import placeholderArchiveImage from '../../shared/assets/avatarArchived.png'
 
 
 const UsersPage: FC = () => {
-    const { users, isLoading, error } = useAppSelector(state => state.userReducer);
+    const { usersActive, usersArchive, isLoading, error } = useAppSelector(state => state.userReducer);
 
     if (isLoading) {
-        return <p>Loading...</p>;
+        return <div className='container'>Loading...</div>;
     }
 
     if (error) {
-        return <p>Error: {error}</p>;
+        return <div className='container'>Error: {error}</div>;
     }
 
     return (
         <div className='container'>
             <SectionTitle title="Активные"/>
             <div className='users-list'>
-                {users.map((user, index) => (
+                {usersActive.map((user, index) => (
                     <React.Fragment key={index}>
                         <UserCard id={user.id} username={user.username} city={user.city} company={user.company} img={placeholderImage}/>
                     </React.Fragment>
@@ -33,7 +33,7 @@ const UsersPage: FC = () => {
             
             <SectionTitle title="Архив"/>
             <div className='users-list'>
-                {users.map((user, index) => (
+                {usersArchive.map((user, index) => (
                     <React.Fragment key={index}>
                         <UserCardArchive id={user.id} username={user.username} city={user.city} company={user.company} img={placeholderArchiveImage}/>
                     </React.Fragment>

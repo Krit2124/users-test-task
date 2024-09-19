@@ -1,0 +1,68 @@
+@import '../../shared/styles/variables.scss';
+@import '../../shared/styles/typography.scss';
+
+.goBack {
+    padding: 20px 0;
+    margin-bottom: 24px;
+
+    &-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        &-text {
+            @include typography-desktop-headline;
+            color: $color-primary02;
+        }
+    }
+}
+
+.content {
+    display: flex;
+    gap: 40px;
+
+    .category-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 40px;
+
+        &-image {
+            max-width: 280px;
+            max-height: 485px;
+            border-radius: 8px;
+        }
+
+        &-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+    }
+
+    .userData {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+        width: 100%;
+        padding: 40px;
+
+        &-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+            width: 100%;
+
+            &-title {
+                @include typography-desktop-title;
+            }
+        }
+    }
+}

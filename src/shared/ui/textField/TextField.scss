@@ -1,0 +1,51 @@
+@import '../../styles/typography';
+@import '../../styles/variables';
+
+.input-field-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 420px;
+
+    .input-label {
+        @include typography-desktop-text1-semibold;
+        color: $color-primary01;
+        margin-bottom: 10px;
+    }
+
+    .input-wrapper {
+        display: flex;
+        align-items: center;
+
+        .input-field {
+            width: 100%;
+            padding: 10px 30px 10px 16px; // Пространство для кнопки очистки
+            border-radius: 50px;
+            border: 1px solid $color-primary04; // Светлая граница
+            font-size: 16px;
+            color: $color-primary01;
+
+            &:focus {
+                outline: none;
+            }
+
+            &::placeholder {
+                color: $color-primary02;
+            }
+        }
+
+        .clear-btn {
+            position: relative;
+            right: 25px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: $color-primary03;
+
+            &:hover {
+                color: $color-primary01; // Изменение цвета при наведении
+            }
+        }
+    }
+}

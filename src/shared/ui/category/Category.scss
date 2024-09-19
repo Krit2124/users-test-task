@@ -1,16 +1,23 @@
 @import '../../styles/typography';
 @import '../../styles/variables';
 
-.section {
+.category {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    margin: 40px 0 28px 0;
+    gap: 12px;
 
     &-text {
-        @include typography-desktop-title;
+        @include typography-desktop-text2-semibold;
         color: $color-primary01;
+    }
+
+    .active {
+        color: $color-primary01;
+    }
+
+    .default {
+        color: $color-primary03;
     }
 
     &-line {
@@ -20,9 +27,9 @@
 }
 
 @media (max-width: 815px) {
-    .section {
+    .category {
         &-text {
-            @include typography-mobile-title;
+            @include typography-mobile-text2-semibold;
         }
     }
 }
