@@ -38,11 +38,14 @@
         @include typography-desktop-headline;
         color: $color-accent;
         margin-bottom: 4px;
+        max-width: 178px;
+        word-wrap: break-word;
 
         &-archive {
             @include typography-desktop-headline;
             color: $color-primary02;
             margin-bottom: 4px;
+            max-width: 178px;
         }
     }
 
